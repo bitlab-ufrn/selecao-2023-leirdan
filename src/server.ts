@@ -7,5 +7,5 @@ server.use(express.json());
 server.set("view engine", "ejs");
 
 server.listen(8082, () => {
-	console.log("it working!");
+	console.log("it works!");
 });
