@@ -6,13 +6,12 @@ export default class filterController {
 		res.render("pages/index");
 	}
 	public async sendToFilter(req: Request, res: Response) {
-		const content = req.body.content;
-		await filterFunc(content)
-			.then((msg) => {
-				res.send(msg);
-			})
-			.catch((err) => {
-				console.error(err);
-			});
+		const content = req.body?.content;
+		try {
+			const result = await filterFunc(content, req, res);
+			res.send(result);
+		} catch (err) {
+			console.error(err);
+		}
 	}
 }
