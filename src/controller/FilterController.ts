@@ -9,7 +9,7 @@ export default class filterController {
 	public async report(req: Request, res: Response) {
 		const content = req.body?.content;
 		if (content == " ") {
-			res.redirect("/home");
+			res.redirect("/");
 		} else {
 			try {
 				const result = filterFunc(content, req);
