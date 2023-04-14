@@ -1,26 +1,27 @@
 {
-  "name": "bitlab",
+  "name": "filterlab",
   "version": "1.0.0",
   "description": "Aplicativo desenvolvido como parte do processo seletivo de uma bolsa do IMD.",
   "main": "src/server.ts",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "start": "node dist/server.js",
-    "build": "tsc --watch",
-    "dev": "nodemon src/server.ts -e ts",
-    "test": "jest"
+    "build": "tsup src",
+    "dev": "tsx src/server.ts"
   },
   "dependencies": {
-    "@types/express": "^4.17.17",
-    "bad-words": "^3.0.4",
+    "@types/node": "^18.15.11",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.5",
     "express": "^4.18.2",
-    "ts-jest": "^29.1.0"
+    "tsup": "^6.7.0",
+    "tsx": "^3.12.6",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@types/bad-words": "^3.0.1",
-    "@types/jest": "^29.5.0",
-    "@types/node": "^18.15.11",
-    "jest": "^29.5.0",
+    "@types/express": "^4.17.17",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tslib": "^2.5.0"
