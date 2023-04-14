@@ -7,6 +7,6 @@ const router = Router();
 
 router.get("/home", filterCtrl.index);
 
-router.post("/home", express.urlencoded(), filterCtrl.sendToFilter);
+router.post("/report", express.urlencoded(), filterCtrl.sendToFilter);
 
 export { router };

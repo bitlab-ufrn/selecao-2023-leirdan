@@ -1,23 +1,18 @@
-import { Request, Response } from "express";
+import { Request } from "express";
 import { data } from "../db/data";
 
-export const filterFunc = async (content: String, req: Request, res: Response) => {
-	let badWords = [];
+export const filterFunc = (content: string, req: Request) => {
+	let badWords: Array<string> = [];
 	try {
 		data.forEach((word) => {
-			if (content?.includes(word)) {
+			if (content?.toLocaleUpperCase().includes(word.toLocaleUpperCase())) {
 				badWords.push(word);
 			}
 		});
-
 		if (badWords.length > 0) {
-			return res.json({
-				msg: `Cuidado, há expressões ofensivas nesse texto. Há um total de ${badWords.length} palavras.`
-			});
+			return `Cuidado, há palavras ofensivas nesse texto.`;
 		} else {
-			return res.json({
-				msg: "Verificamos que não há ofensa alguma no texto, pode enviá-lo com segurança."
-			});
+			return "Verificamos que não há ofensa alguma no texto, pode enviá-lo com segurança.";
 		}
 	} catch (err) {
 		console.log(err);
