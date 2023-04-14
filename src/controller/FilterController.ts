@@ -6,15 +6,19 @@ export default class filterController {
 		res.render("pages/index");
 	}
 
-	public async sendToFilter(req: Request, res: Response) {
+	public async report(req: Request, res: Response) {
 		const content = req.body?.content;
-		try {
-			const result = filterFunc(content, req);
-			if (result !== undefined) {
-				res.render("pages/report", { response: result });
+		if (content == " ") {
+			res.redirect("/home");
+		} else {
+			try {
+				const result = filterFunc(content, req);
+				if (result !== undefined) {
+					res.render("pages/report", { response: result });
+				}
+			} catch (err) {
+				return err;
 			}
-		} catch (err) {
-			console.error(err);
 		}
 	}
 }

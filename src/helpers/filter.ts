@@ -13,12 +13,11 @@ export const filterFunc = (content: string, req: Request) => {
 			for (let i = 0; i < badWords.length; i++) {
 				badWords[i] = " " + badWords[i][0].toUpperCase() + badWords[i].substring(1);
 			}
-			badWords.join(",");
-			return `Cuidado, há as seguintes expressões ofensivas nesse texto: ${badWords}`;
+			return `Detectamos as seguintes expressões ofensivas nesse texto: ${badWords}`;
 		} else {
 			return "Verificamos que não há ofensa alguma no texto, pode enviá-lo com segurança.";
 		}
 	} catch (err) {
-		console.log(err);
+		return err;
 	}
 };
