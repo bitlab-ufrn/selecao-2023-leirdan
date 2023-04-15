@@ -45,4 +45,4 @@ Caso deseje acessar localmente o aplicativo, faça os seguintes passos:
 3. Em seguida, rode o comando `npm i` para instalar todas as dependências necessárias a partir do arquivo `package.json`.
 4. Com todas as dependências configuradas automaticamente, utilize o comando `npm run build && npm run start` para rodar a aplicação.
     - Adicionalmente, crie um arquivo de nome **.env** e insira o seguinte código nele: `PORT=8082`.
-5. Por fim, acesse o navegador e insira `localhost://8082`. Assim, você conseguirá ter acesso à aplicação localmente.
+5. Por fim, acesse o navegador e insira `localhost:8082`. Assim, você conseguirá ter acesso à aplicação localmente.
